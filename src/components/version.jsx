@@ -14,7 +14,7 @@ export default function Version() {
 
   const cachedFetcher = (resource) => cachedFetch(resource, 5).then((res) => res.json());
 
-  const { data: releaseData } = useSWR("https://api.github.com/repos/benphelps/homepage/releases", cachedFetcher);
+  const { data: releaseData } = useSWR("https://api.github.com/repos/cheney-yan/homepage/releases", cachedFetcher);
 
   // use Intl.DateTimeFormat to format the date
   const formatDate = (date) => {
@@ -37,7 +37,7 @@ export default function Version() {
           </>
         ) : (
           <a
-            href={`https://github.com/benphelps/homepage/releases/tag/${version}`}
+            href={`https://github.com/cheney-yan/homepage/releases/tag/${version}`}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 text-xs text-theme-500 dark:text-theme-400 flex flex-row items-center"

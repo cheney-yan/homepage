@@ -19,7 +19,7 @@
     
 
 - Enterprise:
-    - Gmail/Chat/Meet:
+    - Gmail / Chat / Meet:
         - abbr: GM
           href: https://mail.google.com/a/sonder.io
     - Calendar:
@@ -46,9 +46,12 @@
         - abbr: TI
           href: https://ip.sonder.io
 
-    - Tailscale Help:
+    - Tailscale Self Check:
         - abbr: TS
           href: https://sonderaustralia.atlassian.net/wiki/spaces/PPROJ/pages/2110523999/Tailscale+VPN+Self+Check
+    - Tailscale Mac Install:
+        - abbr: TS
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/SIT/pages/2040103116/Macbook+Pro+-+Install+Tailscale
 - AWS:
     - AWS SSO:
         - abbr: AS
@@ -57,7 +60,7 @@
         - abbr: ST
           href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMDZlMjRiZTM2NTUzMmJjNA%3D%3D
     - AWS Production:
-        - abbr: ST
+        - abbr: SP
           href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtMTMxYjY4NjlmZTFlODJiMw%3D%3D
 - Portals:
     - Command Portal:
@@ -77,4 +80,7 @@
     - Braze:
         - abbr: BR
           href: https://dashboard.braze.com/sign_in
+    - Planhat:
+        - abbr: PH
+          href: https://app.planhat.com/data/companies
 

@@ -10,7 +10,7 @@
 # - search:
 #     provider: google
 #     target: _blank
-# - logo:
+- logo:
 
 - greeting:
     text_size: 4xl

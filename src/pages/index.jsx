@@ -31,10 +31,6 @@ const ColorToggle = dynamic(() => import("components/toggles/color"), {
   ssr: false,
 });
 
-const Version = dynamic(() => import("components/version"), {
-  ssr: false,
-});
-
 const rightAlignedWidgets = ["weatherapi", "openweathermap", "weather", "openmeteo", "search", "datetime"];
 
 export async function getStaticProps() {
@@ -293,9 +289,6 @@ function Home({ initialSettings }) {
           {!initialSettings?.theme && <ThemeToggle />}
         </div>
 
-        <div className="flex p-8 pt-4 w-full justify-end">
-          <Version />
-        </div>
       </div>
     </>
   );

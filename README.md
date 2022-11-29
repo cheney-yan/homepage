@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/benphelps/homepage/actions/workflows/docker-publish.yml"><img src="https://github.com/benphelps/homepage/actions/workflows/docker-publish.yml/badge.svg" alt="Docker"></a>
+  <a href="https://github.com/cheney-yan/homepage/actions/workflows/docker-publish.yml"><img src="https://github.com/cheney-yan/homepage/actions/workflows/docker-publish.yml/badge.svg" alt="Docker"></a>
   <a href="https://hosted.weblate.org/engage/homepage/"><img src="https://hosted.weblate.org/widgets/homepage/-/homepage/svg-badge.svg" alt="Weblate"></a>
 </p>
 
@@ -61,9 +61,9 @@
 
 ## Support & Suggestions
 
-If you have any questions, suggestions, or general issues, please start a discussion on the [Discussions](https://github.com/benphelps/homepage/discussions) page.
+If you have any questions, suggestions, or general issues, please start a discussion on the [Discussions](https://github.com/cheney-yan/homepage/discussions) page.
 
-If you have a more specific issue, please open an issue on the [Issues](https://github.com/benphelps/homepage/issues) page.
+If you have a more specific issue, please open an issue on the [Issues](https://github.com/cheney-yan/homepage/issues) page.
 
 ## Getting Started
 
@@ -77,7 +77,7 @@ Using docker compose:
 version: "3.3"
 services:
   homepage:
-    image: ghcr.io/benphelps/homepage:latest
+    image: ghcr.io/cheney-yan/homepage:latest
     container_name: homepage
     ports:
       - 3000:3000
@@ -89,7 +89,7 @@ services:
 or docker run:
 
 ```bash
-docker run -p 3000:3000 -v /path/to/config:/app/config -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/benphelps/homepage:latest
+docker run -p 3000:3000 -v /path/to/config:/app/config -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/cheney-yan/homepage:latest
 ```
 
 ### With Node
@@ -97,7 +97,7 @@ docker run -p 3000:3000 -v /path/to/config:/app/config -v /var/run/docker.sock:/
 First, clone the repository:
 
 ```bash
-git clone https://github.com/benphelps/homepage.git
+git clone https://github.com/cheney-yan/homepage.git
 ```
 
 Then install dependencies and build the production bundle (I'm using pnpm here, you can use npm or yarn if you like):
