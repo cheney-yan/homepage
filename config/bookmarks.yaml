@@ -1,0 +1,80 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Developer:
+    - Bitbucket:
+        - abbr: BB
+          href: https://bitbucket.org/sonderdev/
+    - DataDog:
+        - abbr: DD
+          href: https://app.datadoghq.com/dashboard
+    - Jenkins:
+        - abbr: JK
+          href: https://jenkins.shared.sondersafe.com/
+    - Slack:
+        - abbr: SL
+          href: https://sonder-monitors.slack.com/
+
+    
+
+- Enterprise:
+    - Gmail/Chat/Meet:
+        - abbr: GM
+          href: https://mail.google.com/a/sonder.io
+    - Calendar:
+        - abbr: CA
+          href: https://www.google.com/calendar/hosted/sonder.io
+    - Drive:
+        - abbr: GD
+          href: https://drive.google.com/a/sonder.io
+    - Group:
+        - abbr: GR
+          href: https://groups.google.com/a/sonder.io
+    - Confluence:
+        - abbr: CF
+          href: https://sonderaustralia.atlassian.net/wiki/spaces
+    - JIRA:
+        - abbr: JR
+          href: https://sonderaustralia.atlassian.net/jira/projects
+    - 1Password:
+        - abbr: JR
+          href: https://sonder-australia.1password.com/vaults/all/allitems
+
+- Helps:
+    - Tailscale IP:
+        - abbr: TI
+          href: https://ip.sonder.io
+
+    - Tailscale Help:
+        - abbr: TS
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/PPROJ/pages/2110523999/Tailscale+VPN+Self+Check
+- AWS:
+    - AWS SSO:
+        - abbr: AS
+          href: https://sonderio.awsapps.com/start#/
+    - AWS Staging:
+        - abbr: ST
+          href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMDZlMjRiZTM2NTUzMmJjNA%3D%3D
+    - AWS Production:
+        - abbr: ST
+          href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtMTMxYjY4NjlmZTFlODJiMw%3D%3D
+- Portals:
+    - Command Portal:
+        - abbr: CP
+          href: https://app.prod.sondersafe.com/
+    - Member Portal:
+        - abbr: MP
+          href: https://members.sonder.io/
+
+- Third Party:
+    - Contentful:
+        - abbr: CT
+          href: https://app.contentful.com/account/organizations/1mrZfaeigcwv0r9iTIBmni/teams
+    - Tableau:
+        - abbr: TB
+          href: https://prod-apsoutheast-a.online.tableau.com/#/site/sonderaustralia/home
+    - Braze:
+        - abbr: BR
+          href: https://dashboard.braze.com/sign_in
+

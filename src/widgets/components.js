@@ -14,6 +14,7 @@ const components = {
   gotify: dynamic(() => import("./gotify/component")),
   hdhomerun: dynamic(() => import("./hdhomerun/component")),
   homebridge: dynamic(() => import("./homebridge/component")),
+  ipsonder: dynamic(() => import("./ipsonder/component")),
   jackett: dynamic(() => import("./jackett/component")),
   jellyfin: dynamic(() => import("./emby/component")),
   jellyseerr: dynamic(() => import("./jellyseerr/component")),

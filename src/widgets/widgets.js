@@ -10,6 +10,7 @@ import gluetun from "./gluetun/widget";
 import gotify from "./gotify/widget";
 import hdhomerun from "./hdhomerun/widget";
 import homebridge from "./homebridge/widget";
+import ipsonder from "./ipsonder/widget";
 import jackett from "./jackett/widget";
 import jellyseerr from "./jellyseerr/widget";
 import lidarr from "./lidarr/widget";
@@ -56,6 +57,7 @@ const widgets = {
   gotify,
   hdhomerun,
   homebridge,
+  ipsonder,
   jackett,
   jellyfin: emby,
   jellyseerr,
