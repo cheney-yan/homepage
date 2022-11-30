@@ -12,9 +12,7 @@
 #     target: _blank
 - logo:
 
-- greeting:
-    text_size: 4xl
-    text: Sonder Home
+
 - datetime:
     text_size: m
     format:

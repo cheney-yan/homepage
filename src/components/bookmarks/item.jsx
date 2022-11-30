@@ -4,7 +4,7 @@ import { SettingsContext } from "utils/contexts/settings";
 import ResolvedIcon from "components/resolvedicon";
 
 export default function Item({ bookmark }) {
-  const { hostname } = new URL(bookmark.href);
+  // const { hostname } = new URL(bookmark.href);
   const { settings } = useContext(SettingsContext);
 
   return (
