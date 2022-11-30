@@ -50,8 +50,12 @@
         - abbr: TS
           href: https://sonderaustralia.atlassian.net/wiki/spaces/PPROJ/pages/2110523999/Tailscale+VPN+Self+Check
     - Tailscale Mac Install:
-        - abbr: TS
+        - abbr: TT
           href: https://sonderaustralia.atlassian.net/wiki/spaces/SIT/pages/2040103116/Macbook+Pro+-+Install+Tailscale
+    - Set up AWS SSO:
+        - abbr: SA
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/395182708/Setting+up+AWS
+      
 - AWS:
     - AWS SSO:
         - abbr: AS
