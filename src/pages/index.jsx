@@ -7,6 +7,7 @@ import { useTranslation } from "next-i18next";
 import { useEffect, useContext, useState } from "react";
 import { BiError } from "react-icons/bi";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 import ServicesGroup from "components/services/group";
 import BookmarksGroup from "components/bookmarks/group";
@@ -172,7 +173,7 @@ function Home({ initialSettings }) {
   const { data: widgets } = useSWR("/api/widgets");
   
   const servicesAndBookmarks = [...services.map(sg => sg.services).flat(), ...bookmarks.map(bg => bg.bookmarks).flat()]
-
+  const { data: session } = useSession();
   useEffect(() => {
     if (settings.language) {
       i18n.changeLanguage(settings.language);
@@ -208,90 +209,97 @@ function Home({ initialSettings }) {
       document.removeEventListener('keydown', handleKeyDown);
     }
   })
-
-  return (
-    <>
-      <Head>
-        <title>{initialSettings.title || "Homepage"}</title>
-        {initialSettings.base && <base href={initialSettings.base} />}
-        {initialSettings.favicon ? (
-          <>
-            <link rel="apple-touch-icon" sizes="180x180" href={initialSettings.favicon} />
-            <link rel="icon" href={initialSettings.favicon} />
-          </>
-        ) : (
-          <>
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
-            <link rel="shortcut icon" href="/homepage.ico" />
-            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
-            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
-          </>
-        )}
-        <meta
-          name="msapplication-TileColor"
-          content={themes[initialSettings.color || "slate"][initialSettings.theme || "dark"]}
-        />
-        <meta name="theme-color" content={themes[initialSettings.color || "slate"][initialSettings.theme || "dark"]} />
-      </Head>
-      <div className="relative container m-auto flex flex-col justify-between z-10">
-        <div
-          className={classNames(
-            "flex flex-row flex-wrap  justify-between",
-            headerStyles[initialSettings.headerStyle || "underlined"]
-          )}
-        >
-          <QuickLaunch
-            servicesAndBookmarks={servicesAndBookmarks}
-            searchString={searchString}
-            setSearchString={setSearchString}
-            isOpen={searching}
-            close={setSearching}
-            searchDescriptions={settings.quicklaunch?.searchDescriptions}
-          />
-          {widgets && (
+  if (session) {
+    return (
+      <>
+        <Head>
+          <title>{initialSettings.title || "Homepage"}</title>
+          {initialSettings.base && <base href={initialSettings.base} />}
+          {initialSettings.favicon ? (
             <>
-              {widgets
-                .filter((widget) => !rightAlignedWidgets.includes(widget.type))
-                .map((widget, i) => (
-                  <Widget key={i} widget={widget} />
-                ))}
-
-              <div className="m-auto sm:ml-2 flex flex-wrap grow sm:basis-auto justify-between md:justify-end">
+              <link rel="apple-touch-icon" sizes="180x180" href={initialSettings.favicon} />
+              <link rel="icon" href={initialSettings.favicon} />
+            </>
+          ) : (
+            <>
+              <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
+              <link rel="shortcut icon" href="/homepage.ico" />
+              <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
+              <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
+            </>
+          )}
+          <meta
+            name="msapplication-TileColor"
+            content={themes[initialSettings.color || "slate"][initialSettings.theme || "dark"]}
+          />
+          <meta name="theme-color" content={themes[initialSettings.color || "slate"][initialSettings.theme || "dark"]} />
+        </Head>
+        <div className="relative container m-auto flex flex-col justify-between z-10">
+          <div
+            className={classNames(
+              "flex flex-row flex-wrap  justify-between",
+              headerStyles[initialSettings.headerStyle || "underlined"]
+            )}
+          >
+            <QuickLaunch
+              servicesAndBookmarks={servicesAndBookmarks}
+              searchString={searchString}
+              setSearchString={setSearchString}
+              isOpen={searching}
+              close={setSearching}
+              searchDescriptions={settings.quicklaunch?.searchDescriptions}
+            />
+            {widgets && (
+              <>
                 {widgets
-                  .filter((widget) => rightAlignedWidgets.includes(widget.type))
+                  .filter((widget) => !rightAlignedWidgets.includes(widget.type))
                   .map((widget, i) => (
                     <Widget key={i} widget={widget} />
                   ))}
-              </div>
-            </>
+
+                <div className="m-auto sm:ml-2 flex flex-wrap grow sm:basis-auto justify-between md:justify-end">
+                  {widgets
+                    .filter((widget) => rightAlignedWidgets.includes(widget.type))
+                    .map((widget, i) => (
+                      <Widget key={i} widget={widget} />
+                    ))}
+                </div>
+              </>
+            )}
+          </div>
+
+          {services && (
+            <div className="flex flex-wrap p-4 sm:p-8 sm:pt-4 items-start pb-2">
+              {services.map((group) => (
+                <ServicesGroup key={group.name} services={group} layout={initialSettings.layout?.[group.name]} />
+              ))}
+            </div>
           )}
-        </div>
 
-        {services && (
-          <div className="flex flex-wrap p-4 sm:p-8 sm:pt-4 items-start pb-2">
-            {services.map((group) => (
-              <ServicesGroup key={group.name} services={group} layout={initialSettings.layout?.[group.name]} />
-            ))}
+          {bookmarks && (
+            <div className={`grow flex flex-wrap pt-0 p-4 sm:p-8 gap-2 grid-cols-1 lg:grid-cols-2 lg:grid-cols-${Math.min(6, bookmarks.length)}`}>
+              {bookmarks.map((group) => (
+                <BookmarksGroup key={group.name} group={group} />
+              ))}
+            </div>
+          )}
+
+          <div className="flex p-8 pb-0 w-full justify-end">
+            {!initialSettings?.color && <ColorToggle />}
+            <Revalidate />
+            {!initialSettings?.theme && <ThemeToggle />}
           </div>
-        )}
 
-        {bookmarks && (
-          <div className={`grow flex flex-wrap pt-0 p-4 sm:p-8 gap-2 grid-cols-1 lg:grid-cols-2 lg:grid-cols-${Math.min(6, bookmarks.length)}`}>
-            {bookmarks.map((group) => (
-              <BookmarksGroup key={group.name} group={group} />
-            ))}
-          </div>
-        )}
-
-        <div className="flex p-8 pb-0 w-full justify-end">
-          {!initialSettings?.color && <ColorToggle />}
-          <Revalidate />
-          {!initialSettings?.theme && <ThemeToggle />}
         </div>
-
+      </>
+    );
+  } else {
+    return (
+      <div className="flex-1">
+        <button type="button"   onClick={() => signIn()}>Sign in</button>
       </div>
-    </>
-  );
+    );
+  }
 }
 
 export default function Wrapper({ initialSettings, fallback }) {
