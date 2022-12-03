@@ -97,15 +97,39 @@
           tags:
             - dev
             - ops
-    - AWS Staging Regular:
+    - AWS StagingRegular:
+        - abbr: SR
+          href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMDZlMjRiZTM2NTUzMmJjNA%3D%3D
+          tags:
+            - dev
+            - ops
+    - AWS ProdRegular:
+        - abbr: PR
+          href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtMTMxYjY4NjlmZTFlODJiMw%3D%3D
+          tags:
+            - dev
+            - ops
+    - AWS DevRegular:
+        - abbr: DR
+          href: https://sonderio.awsapps.com/start/#/saml/custom/758133271689%20%28Development%29/NDQ3ODM5MzgxODUwX2lucy1jOWExMDA3YjM2OWI2ZTFhX3AtNGU5OTNjYzYxNTJjMTIyNw%3D%3D
+          tags:
+            - dev
+            - ops
+    - AWS ProdAdmin:
+        - abbr: PA
+          href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtZjY2MjRlNmFjNGQwMjQwNw%3D%3D
+          tags:
+            - dev
+            - ops
+    - AWS StagingAdmin:
         - abbr: ST
           href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMDZlMjRiZTM2NTUzMmJjNA%3D%3D
           tags:
             - dev
             - ops
-    - AWS Production Regular:
-        - abbr: SP
-          href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtMTMxYjY4NjlmZTFlODJiMw%3D%3D
+    - AWS DevAdmin:
+        - abbr: 
+          href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMWJkNTU4Y2EyMWVhNmQ5ZA%3D%3D
           tags:
             - dev
             - ops
