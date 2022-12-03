@@ -44,6 +44,12 @@
           tags:
             - dev
             - ops
+    - Gsuite:
+        - abbr: GS
+          href: https://admin.google.com/ac/home
+          tags:
+            - dev
+    
 
 - Enterprise:
     - Gmail / Chat / Meet:
@@ -72,6 +78,11 @@
     - Tailscale IP:
         - abbr: TI
           href: https://ip.sonder.io
+    - Tailscale Admin:
+        - abbr: TA
+          href: https://login.tailscale.com/admin/machines
+          tags:
+            - dev
     - Tailscale Self Check:
         - abbr: TS
           href: https://sonderaustralia.atlassian.net/wiki/spaces/PPROJ/pages/2110523999/Tailscale+VPN+Self+Check
@@ -128,7 +139,7 @@
             - dev
             - ops
     - AWS DevAdmin:
-        - abbr: 
+        - abbr: DA
           href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMWJkNTU4Y2EyMWVhNmQ5ZA%3D%3D
           tags:
             - dev
@@ -172,5 +183,11 @@
     - Planhat:
         - abbr: PH
           href: https://app.planhat.com/data/companies
+          tags:
+            - dev
+- Architect:
+    - Components:
+        - abbr: PC
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/364088298/Production+Platform+Components+STP
           tags:
             - dev
