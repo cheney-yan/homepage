@@ -190,6 +190,11 @@
           href: https://console.firebase.google.com/
           tags:
             - dev
+    - Google Cloud Console:
+        - abbr: GC
+          href: https://console.cloud.google.com/welcome?project=stp-prod-ad3af
+          tags:
+            - dev
 - Architect:
     - Components:
         - abbr: PC
