@@ -8,6 +8,7 @@ import { useEffect, useContext, useState } from "react";
 import { BiError } from "react-icons/bi";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { signIn, signOut, useSession } from 'next-auth/client';
+import { useRouter } from 'next/router'
 
 import ServicesGroup from "components/services/group";
 import BookmarksGroup from "components/bookmarks/group";
@@ -168,9 +169,11 @@ function Home({ initialSettings }) {
   }, [initialSettings, setSettings]);
 
   const { data: services } = useSWR("/api/services");
-  const { data: bookmarks } = useSWR("/api/bookmarks");
+  const { query } = useRouter();
+  const { filter } =query;
+  const fetcher = url => fetch(filter?`${url}?filter=${filter}`:url).then(r => r.json())
+  const { data: bookmarks } = useSWR("/api/bookmarks", fetcher);
   const { data: widgets } = useSWR("/api/widgets");
-  
   const servicesAndBookmarks = [...services.map(sg => sg.services).flat(), ...bookmarks.map(bg => bg.bookmarks).flat()]
   const [session, loadingSession] = useSession();
   useEffect(() => {

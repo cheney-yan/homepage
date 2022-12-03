@@ -16,7 +16,6 @@ export async function bookmarksResponse() {
   const bookmarks = yaml.load(fileContents);
 
   if (!bookmarks) return [];
-
   // map easy to write YAML objects into easy to consume JS arrays
   const bookmarksArray = bookmarks.map((group) => ({
     name: Object.keys(group)[0],
@@ -25,7 +24,6 @@ export async function bookmarksResponse() {
       ...entries[Object.keys(entries)[0]][0],
     })),
   }));
-
   return bookmarksArray;
 }
 
