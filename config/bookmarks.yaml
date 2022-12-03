@@ -68,11 +68,10 @@
         - abbr: JR
           href: https://sonder-australia.1password.com/vaults/all/allitems
 
-- Helps:
+- Network:
     - Tailscale IP:
         - abbr: TI
           href: https://ip.sonder.io
-
     - Tailscale Self Check:
         - abbr: TS
           href: https://sonderaustralia.atlassian.net/wiki/spaces/PPROJ/pages/2110523999/Tailscale+VPN+Self+Check
@@ -85,6 +84,11 @@
           tags:
             - dev
             - ops
+    - Known IPs
+        - abbr: IP
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/338199469/Infrastructure
+          tags:
+            - dev
 
 - AWS:
     - AWS SSO:
