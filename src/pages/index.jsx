@@ -60,7 +60,6 @@ export async function getStaticProps() {
 
     const services = await servicesResponse();
     const widgets = await widgetsResponse();
-    logger.error(window.location.query);
     const { query } = useRouter();
     const { filter } = query;
     let bookmarks = await bookmarksResponse(filter);
