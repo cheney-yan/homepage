@@ -185,6 +185,11 @@
           href: https://app.planhat.com/data/companies
           tags:
             - dev
+    - Firebase:
+        - abbr: FB
+          href: https://console.firebase.google.com/
+          tags:
+            - dev
 - Architect:
     - Components:
         - abbr: PC
