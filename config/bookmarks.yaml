@@ -110,12 +110,24 @@
             - dev
             - ops
 - Portals:
-    - Command Portal:
+    - PROD Command Portal:
         - abbr: CP
           href: https://app.prod.sondersafe.com/
-    - Member Portal:
+    - PROD Member Portal:
         - abbr: MP
           href: https://members.sonder.io/
+    - Staging Command Portal:
+        - abbr: CP
+          href: https://app.staging.sondersafe.com/
+    - Staging Member Portal:
+        - abbr: MP
+          href: https://mp-staging.sonder.io/
+    - Dev Command Portal:
+        - abbr: CP
+          href: https://app.dev.sondersafe.com/
+    - Dev Member Portal:
+        - abbr: MP
+          href: https://mp-dev.sonder.io/
 
 - Third Party:
     - Contentful:
