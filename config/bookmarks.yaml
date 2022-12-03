@@ -2,22 +2,28 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
-- Developer:
+- Tech:
     - Bitbucket:
         - abbr: BB
           href: https://bitbucket.org/sonderdev/
+          tags: 
+          - dev
     - DataDog:
         - abbr: DD
           href: https://app.datadoghq.com/dashboard
           tags: 
           - dev
-          - ops
     - Jenkins:
         - abbr: JK
           href: https://jenkins.shared.sondersafe.com/
+          tags: 
+          - dev
     - Slack:
         - abbr: SL
           href: https://sonder-monitors.slack.com/ssb/redirect
+          tags: 
+          - dev
+          - ops
 
     
 

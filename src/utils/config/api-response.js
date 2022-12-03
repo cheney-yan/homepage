@@ -7,8 +7,24 @@ import yaml from "js-yaml";
 import checkAndCopyConfig, { getSettings } from "utils/config/config";
 import { servicesFromConfig, servicesFromDocker, cleanServiceGroups } from "utils/config/service-helpers";
 import { cleanWidgetGroups, widgetsFromConfig } from "utils/config/widget-helpers";
-
-export async function bookmarksResponse() {
+async function filterBookmarks(bookmarks, filter) {
+  let bks = bookmarks.reduce(function (filtered, bookmark) {
+    let bk = bookmark.bookmarks.filter(item => {
+      if (item.tags == undefined || filter == undefined)
+        return true
+      return item.tags?.includes(filter)
+    })
+    if (bk.length > 0) {
+      filtered.push({
+        name: bookmark.name,
+        bookmarks: bk
+      })
+    }
+    return filtered;
+  }, []);
+  return bks
+}
+export async function bookmarksResponse(filter) {
   checkAndCopyConfig("bookmarks.yaml");
 
   const bookmarksYaml = path.join(process.cwd(), "config", "bookmarks.yaml");
@@ -24,7 +40,7 @@ export async function bookmarksResponse() {
       ...entries[Object.keys(entries)[0]][0],
     })),
   }));
-  return bookmarksArray;
+  return filterBookmarks(bookmarksArray, filter);
 }
 
 export async function widgetsResponse() {

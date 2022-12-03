@@ -1,7 +1,6 @@
 import { bookmarksResponse } from "utils/config/api-response";
 import { getSession } from 'next-auth/client';
 import { getToken } from 'next-auth/jwt';
-import createLogger from "utils/logger";
 
 async function filterBookmarks(bookmarks, filter) {
   let bks = bookmarks.reduce(function (filtered, bookmark) {

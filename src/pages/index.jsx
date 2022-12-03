@@ -34,6 +34,23 @@ const ColorToggle = dynamic(() => import("components/toggles/color"), {
 });
 
 const rightAlignedWidgets = ["weatherapi", "openweathermap", "weather", "openmeteo", "search", "datetime"];
+async function filterBookmarks(bookmarks, filter) {
+  let bks = bookmarks.reduce(function (filtered, bookmark) {
+    let bk = bookmark.bookmarks.filter(item => {
+      if (item.tags == undefined || filter == undefined)
+        return true
+      return item.tags?.includes(filter)
+    })
+    if (bk.length > 0) {
+      filtered.push({
+        name: bookmark.name,
+        bookmarks: bk
+      })
+    }
+    return filtered;
+  }, []);
+  return bks
+}
 
 export async function getStaticProps() {
   let logger;
@@ -42,8 +59,11 @@ export async function getStaticProps() {
     const { providers, ...settings } = getSettings();
 
     const services = await servicesResponse();
-    const bookmarks = await bookmarksResponse();
     const widgets = await widgetsResponse();
+    logger.error(window.location.query);
+    const { query } = useRouter();
+    const { filter } = query;
+    let bookmarks = await bookmarksResponse(filter);
     return {
       props: {
         initialSettings: settings,
