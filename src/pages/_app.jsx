@@ -2,7 +2,6 @@
 import { SWRConfig } from "swr";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
-import { SessionProvider } from 'next-auth/react';
 
 import "styles/globals.css";
 import "styles/theme.css";
@@ -13,7 +12,9 @@ import { ColorProvider } from "utils/contexts/color";
 import { ThemeProvider } from "utils/contexts/theme";
 import { SettingsProvider } from "utils/contexts/settings";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, 
+  pageProps,
+ }) {
   return (
     <SWRConfig
       value={{
@@ -27,9 +28,7 @@ function MyApp({ Component, pageProps }) {
       <ColorProvider>
         <ThemeProvider>
           <SettingsProvider>
-              <SessionProvider session={pageProps.session}>
-                <Component {...pageProps} />
-              </SessionProvider>
+            <Component {...pageProps} />
           </SettingsProvider>
         </ThemeProvider>
       </ColorProvider>

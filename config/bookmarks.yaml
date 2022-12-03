@@ -9,6 +9,9 @@
     - DataDog:
         - abbr: DD
           href: https://app.datadoghq.com/dashboard
+          tags: 
+          - dev
+          - ops
     - Jenkins:
         - abbr: JK
           href: https://jenkins.shared.sondersafe.com/

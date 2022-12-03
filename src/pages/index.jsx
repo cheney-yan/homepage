@@ -7,7 +7,7 @@ import { useTranslation } from "next-i18next";
 import { useEffect, useContext, useState } from "react";
 import { BiError } from "react-icons/bi";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 import ServicesGroup from "components/services/group";
 import BookmarksGroup from "components/bookmarks/group";
@@ -43,7 +43,6 @@ export async function getStaticProps() {
     const services = await servicesResponse();
     const bookmarks = await bookmarksResponse();
     const widgets = await widgetsResponse();
-
     return {
       props: {
         initialSettings: settings,
@@ -173,7 +172,7 @@ function Home({ initialSettings }) {
   const { data: widgets } = useSWR("/api/widgets");
   
   const servicesAndBookmarks = [...services.map(sg => sg.services).flat(), ...bookmarks.map(bg => bg.bookmarks).flat()]
-  const { data: session } = useSession();
+  const [session, loadingSession] = useSession();
   useEffect(() => {
     if (settings.language) {
       i18n.changeLanguage(settings.language);
@@ -209,6 +208,7 @@ function Home({ initialSettings }) {
       document.removeEventListener('keydown', handleKeyDown);
     }
   })
+  
   if (session) {
     return (
       <>
@@ -234,7 +234,9 @@ function Home({ initialSettings }) {
           />
           <meta name="theme-color" content={themes[initialSettings.color || "slate"][initialSettings.theme || "dark"]} />
         </Head>
+        
         <div className="relative container m-auto flex flex-col justify-between z-10">
+
           <div
             className={classNames(
               "flex flex-row flex-wrap  justify-between",
@@ -279,24 +281,27 @@ function Home({ initialSettings }) {
           {bookmarks && (
             <div className={`grow flex flex-wrap pt-0 p-4 sm:p-8 gap-2 grid-cols-1 lg:grid-cols-2 lg:grid-cols-${Math.min(6, bookmarks.length)}`}>
               {bookmarks.map((group) => (
-                <BookmarksGroup key={group.name} group={group} />
+                   <BookmarksGroup key={group.name} group={group} />
               ))}
             </div>
           )}
 
-          <div className="flex p-8 pb-0 w-full justify-end">
+          <div className="flex p- pb-0 w-full justify-end">
             {!initialSettings?.color && <ColorToggle />}
-            <Revalidate />
             {!initialSettings?.theme && <ThemeToggle />}
+            <Revalidate />
+            
           </div>
-
+          <div className="flex p- pb-0 w-full justify-end">
+            <button onClick={() => signOut()}><h2 className="text-theme-800 dark:text-theme-300 text-xl font-medium">Sign out {session.user.email}</h2></button>
+          </div>          
         </div>
       </>
     );
   } else {
     return (
-      <div className="flex-1">
-        <button type="button"   onClick={() => signIn()}>Sign in</button>
+      <div className="relative container m-auto flex flex-col justify-between z-10">
+        <button type="button" onClick={() => signIn()}><h2 className="text-theme-800 dark:text-theme-300 text-xl font-medium">Sign In</h2></button>
       </div>
     );
   }
