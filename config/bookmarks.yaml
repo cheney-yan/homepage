@@ -2,30 +2,48 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/bookmarks
 
+- Filters:
+    - dev:
+        - abbr: #
+          href: https://home.sonder.io?filter=dev
+          tags:
+            - filter
+    - ops:
+        - abbr: #
+          href: https://home.sonder.io?filter=ops
+          tags:
+            - filter
+    - ent:
+        - abbr: #
+          href: https://home.sonder.io?filter=ent
+          tags:
+            - filter
+    - all:
+        - abbr: #
+          href: https://home.sonder.io
+
 - Tech:
     - Bitbucket:
         - abbr: BB
           href: https://bitbucket.org/sonderdev/
-          tags: 
-          - dev
+          tags:
+            - dev
     - DataDog:
         - abbr: DD
           href: https://app.datadoghq.com/dashboard
-          tags: 
-          - dev
+          tags:
+            - dev
     - Jenkins:
         - abbr: JK
           href: https://jenkins.shared.sondersafe.com/
-          tags: 
-          - dev
+          tags:
+            - dev
     - Slack:
         - abbr: SL
           href: https://sonder-monitors.slack.com/ssb/redirect
-          tags: 
-          - dev
-          - ops
-
-    
+          tags:
+            - dev
+            - ops
 
 - Enterprise:
     - Gmail / Chat / Meet:
@@ -64,17 +82,29 @@
     - Set up AWS SSO:
         - abbr: SA
           href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/395182708/Setting+up+AWS
-      
+          tags:
+            - dev
+            - ops
+
 - AWS:
     - AWS SSO:
         - abbr: AS
           href: https://sonderio.awsapps.com/start#/
-    - AWS Staging:
+          tags:
+            - dev
+            - ops
+    - AWS Staging Regular:
         - abbr: ST
           href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMDZlMjRiZTM2NTUzMmJjNA%3D%3D
-    - AWS Production:
+          tags:
+            - dev
+            - ops
+    - AWS Production Regular:
         - abbr: SP
           href: https://sonderio.awsapps.com/start/#/saml/custom/084023162480%20%28Production%29/NDQ3ODM5MzgxODUwX2lucy0zODMxNmM0YTc3YmQzMjYyX3AtMTMxYjY4NjlmZTFlODJiMw%3D%3D
+          tags:
+            - dev
+            - ops
 - Portals:
     - Command Portal:
         - abbr: CP
@@ -87,13 +117,20 @@
     - Contentful:
         - abbr: CT
           href: https://app.contentful.com/account/organizations/1mrZfaeigcwv0r9iTIBmni/teams
+          tags:
+            - dev
     - Tableau:
         - abbr: TB
           href: https://prod-apsoutheast-a.online.tableau.com/#/site/sonderaustralia/home
+          tags:
+            - dev
     - Braze:
         - abbr: BR
           href: https://dashboard.braze.com/sign_in
+          tags:
+            - dev
     - Planhat:
         - abbr: PH
           href: https://app.planhat.com/data/companies
-
+          tags:
+            - dev

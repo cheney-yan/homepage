@@ -40,7 +40,7 @@ export async function bookmarksResponse(filter) {
       ...entries[Object.keys(entries)[0]][0],
     })),
   }));
-  return filterBookmarks(bookmarksArray, filter);
+  return await filterBookmarks(bookmarksArray, filter);
 }
 
 export async function widgetsResponse() {

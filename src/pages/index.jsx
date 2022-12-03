@@ -62,7 +62,7 @@ export async function getStaticProps() {
     const widgets = await widgetsResponse();
     const { query } = useRouter();
     const { filter } = query;
-    let bookmarks = await bookmarksResponse(filter);
+    const bookmarks = await bookmarksResponse(filter);
     return {
       props: {
         initialSettings: settings,
@@ -128,38 +128,6 @@ function Index({ initialSettings, fallback }) {
       }
     }
   }, [hashData]);
-
-  if (stale) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="w-24 h-24 border-2 border-theme-400 border-solid rounded-full animate-spin border-t-transparent" />
-      </div>
-    );
-  }
-
-  if (errorsData && errorsData.length > 0) {
-    return (
-      <div className="w-full h-screen container m-auto justify-center p-10 pointer-events-none">
-        <div className="flex flex-col">
-          {errorsData.map((error, i) => (
-            <div
-              className="basis-1/2 bg-theme-500 dark:bg-theme-600 text-theme-600 dark:text-theme-300 m-2 rounded-md font-mono shadow-md border-4 border-transparent"
-              key={i}
-            >
-              <div className="bg-amber-200 text-amber-800 dark:text-amber-200 dark:bg-amber-800 p-2 rounded-md font-bold">
-                <BiError className="float-right w-6 h-6" />
-                {error.config}
-              </div>
-              <div className="p-2 text-theme-100 dark:text-theme-200">
-                <pre className="opacity-50 font-bold pb-2">{error.reason}</pre>
-                <pre className="text-sm">{error.mark.snippet}</pre>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   return (
     <SWRConfig value={{ fallback, fetcher: (resource, init) => fetch(resource, init).then((res) => res.json()) }}>
