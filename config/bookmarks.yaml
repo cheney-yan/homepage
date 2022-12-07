@@ -226,10 +226,25 @@
           href: https://app.planhat.com/data/companies
           tags:
             - dev
+    - Qualtircs:
+        - abbr: QT
+          href: https://login.qualtrics.com/login
+          tags:
+            - dev
+    - MediRecords:
+        - abbr: MR
+          href: https://app.medirecords.com/login.html#
+          tags:
+            - dev
 
-- Architect:
+- Architecture:
     - Components:
         - abbr: PC
           href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/364088298/Production+Platform+Components+STP
+          tags:
+            - dev
+    - Prod Domains:
+        - abbr: PD
+          href: https://sonderaustralia.atlassian.net/wiki/spaces/DEV/pages/2089943196/PUBLIC+Domains+and+URLS
           tags:
             - dev
