@@ -114,6 +114,7 @@
     - AWS SSO:
         - abbr: AS
           href: https://sonderio.awsapps.com/start#/
+          tags:
             - dev
     - AWS StagingRegular:
         - abbr: SR
@@ -142,7 +143,7 @@
             - dev
     - AWS DevAdmin:
         - abbr: DA
-          href: https://sonderio.awsapps.com/start/#/saml/custom/889246982606%20%28Staging%29/NDQ3ODM5MzgxODUwX2lucy1lZWI3ZDQ5MWRlY2FjZDcyX3AtMWJkNTU4Y2EyMWVhNmQ5ZA%3D%3D
+          href: https://sonderio.awsapps.com/start/#/saml/custom/758133271689%20%28Development%29/NDQ3ODM5MzgxODUwX2lucy1jOWExMDA3YjM2OWI2ZTFhX3AtZWZmNjg1MjBiMTU3NTA0ZA%3D%3D
           tags:
             - dev
     - AWS SharedAdmin:
