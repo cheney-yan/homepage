@@ -82,6 +82,9 @@
     - 1Password:
         - abbr: JR
           href: https://sonder-australia.1password.com/vaults/all/allitems
+    - SnapPass:
+        - abbr: SN
+          href: https://snappass.shared.sondersafe.com
 
 - Network:
     - Tailscale IP:
