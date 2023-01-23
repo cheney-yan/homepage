@@ -44,6 +44,12 @@
           tags:
             - dev
             - ops
+    - Grafana:
+        - abbr: GR
+          href: https://grafana.shared.sondersafe.com/
+          tags:
+            - dev
+            - ops
     - Gsuite:
         - abbr: GS
           href: https://admin.google.com/ac/home
@@ -58,7 +64,22 @@
         - abbr: GC
           href: https://console.cloud.google.com/welcome?project=stp-prod-ad3af
           tags:
-            - dev    
+            - dev
+    - SourceGraph:
+        - abbr: SG
+          href: https://nexus.shared.sondersafe.com/
+          tags:
+            - dev
+    - Nexus:
+        - abbr: NX
+          href: http://10.1.1.251:7080/search
+          tags:
+            - dev
+    - SonarCLoud:
+        - abbr: SC
+          href: https://sonarcloud.io/organizations/sonderdev/projects?sort=analysis_date
+          tags:
+            - dev
 
 - Enterprise:
     - Gmail / Chat / Meet:
