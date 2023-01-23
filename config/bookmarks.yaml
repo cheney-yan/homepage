@@ -67,12 +67,12 @@
             - dev
     - SourceGraph:
         - abbr: SG
-          href: https://nexus.shared.sondersafe.com/
+          href: http://10.1.1.251:7080/search
           tags:
             - dev
     - Nexus:
         - abbr: NX
-          href: http://10.1.1.251:7080/search
+          href: https://nexus.shared.sondersafe.com/
           tags:
             - dev
     - SonarCLoud:
